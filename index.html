@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-      body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
-      model-viewer { width: 100%; height: 100%; }
-    </style>
-  </head>
-  <body>
-    <model-viewer 
-      src="canon_at-1_retro_camera.glb" 
-      ar 
-      ar-modes="webxr scene-viewer quick-look" 
-      camera-controls 
-      auto-rotate>
-    </model-viewer>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { 
+      margin: 0; 
+      padding: 0; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      background-color: #e0e0e0; /* Latar belakang abu-abu terang agar tidak putih silau */
+    }
+    model-viewer { 
+      width: 100%;  /* Mengikuti lebar layar */
+      height: 85vh; /* Tinggi 85% dari layar, memberi kesan Portrait yang luas */
+    }
+  </style>
+</head>
+<body>
+
+  <model-viewer 
+    src="canon_at-1_retro_camera.glb" 
+    ar 
+    ar-modes="webxr scene-viewer quick-look" 
+    camera-controls 
+    auto-rotate 
+    shadow-intensity="1" 
+    shadow-softness="1"
+    exposure="1"
+    camera-orbit="0deg 75deg 105%"
+    alt="Model 3D Backrooms">
+    
+    <button slot="ar-button" style="background: white; border-radius: 8px; padding: 12px 20px; border: none; cursor: pointer;">
+      Lihat di Ruangan Anda (AR)
+    </button>
+  </model-viewer>
+
+</body>
 </html>
