@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body { 
       margin: 0; 
-      padding: 0; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh; 
-      background-color: #e0e0e0; 
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+      font-family: 'Segoe UI', sans-serif;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;
+      color: white;
     }
-    model-viewer { 
-      width: 100%;  
-      height: 85vh; 
+    .text-box { text-align: center; margin-bottom: 20px; }
+    .ar-button {
+      background: #4ecca3;
+      color: #1a1a2e;
+      padding: 15px 30px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
+    model-viewer { width: 100%; height: 60vh; }
   </style>
 </head>
 <body>
 
+  <div class="text-box">
+    <h1>Koleksi Kamera Retro</h1>
+    <p>Putar untuk melihat detail, klik tombol untuk AR</p>
+  </div>
+
   <model-viewer 
-    src="canon_at-1_retro_camera.glb" 
+    src="canon_at-1_retro_camera.glb"
     ar 
-    ar-modes="webxr scene-viewer quick-look" 
     camera-controls 
-    auto-rotate 
-    shadow-intensity="1" 
-    shadow-softness="1"
-    exposure="1"
-    camera-orbit="0deg 75deg 105%"
-    alt="Model 3D Backrooms">
+    auto-rotate>
     
-    <button slot="ar-button" style="background: white; border-radius: 8px; padding: 12px 20px; border: none; cursor: pointer;">
-      Klik Menu Ini
+    <button slot="ar-button" class="ar-button">
+      📸 Lihat Kamera di Ruangan
     </button>
   </model-viewer>
 
